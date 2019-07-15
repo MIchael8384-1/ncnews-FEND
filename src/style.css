@@ -1,0 +1,34 @@
+.header {
+  text-align: left;
+  font-size: 3em;
+  color: black;
+  border-style: solid;
+}
+
+.mainNavigation {
+  text-align: center;
+}
+
+.articlesList {
+  list-style-type: none;
+  text-align: center;
+  border-style: solid;
+  border-radius: 25px;
+
+  padding: 30px;
+}
+
+.btn-group {
+  background-color: black;
+  margin-left: 10px;
+  border: 1px solid;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+}
+a:link {
+  text-decoration: none;
+}
+a {
+  color: white;
+}
