@@ -6,6 +6,14 @@ const request = axios.create({
 
 export const fetchArticles = () => {
   return request.get("articles").then(({ data }) => {
+    console.log(data.articles);
     return data.articles;
+  });
+};
+
+export const fetchTopics = () => {
+  return request.get("topics").then(({ data }) => {
+    console.log(data.topics);
+    return data.topics;
   });
 };
