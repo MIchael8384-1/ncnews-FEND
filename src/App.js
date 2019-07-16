@@ -4,7 +4,7 @@ import "./App.css";
 import Articles from "./components/Articles";
 import Nav from "./components/Nav";
 import Article from "./components/Article";
-import Topic from "./components/Topic";
+import Topic from "./components/Topics";
 import Header from "./components/Header";
 import "./style.css";
 
