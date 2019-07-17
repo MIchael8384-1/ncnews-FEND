@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
+import { Link } from "@reach/router";
 
 class Articles extends Component {
   state = {
@@ -18,8 +19,8 @@ class Articles extends Component {
   };
 
   render() {
-    const { articles } = this.state;
-    const { loading } = this.state;
+    const { articles, loading } = this.state;
+
     let content;
 
     if (loading) {
@@ -30,7 +31,9 @@ class Articles extends Component {
           <ul className="articles">
             <li key={articleList.article_id} className="articlesList">
               <h2 className="author">Author:{articleList.author}</h2> <br />
-              <h3 className="title">Title:{articleList.title}</h3>
+              <Link to={`/articles/${articleList.article_id}`}>
+                <h3 className="title">Title:{articleList.title}</h3>
+              </Link>
               <br />
               <h3 className="topic">Topic:{articleList.topic}</h3>
               <button>Comments</button>

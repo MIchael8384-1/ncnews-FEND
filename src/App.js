@@ -15,7 +15,7 @@ function App() {
       <Nav />
       <Router>
         <Articles path="/" />
-        <Article path="/article" />
+        <Article path="articles/:article_id" />
         <Topic path="/topics" />
       </Router>
     </div>
