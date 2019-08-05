@@ -4,9 +4,16 @@ const request = axios.create({
   baseURL: "https://bencnews.herokuapp.com/api/"
 });
 
-export const fetchArticles = () => {
-  return request.get("articles").then(({ data }) => {
+export const fetchArticles = slug => {
+  const URL = slug ? `/topics/${slug}/articles` : "/articles";
+  return request.get(URL).then(({ data }) => {
     return data.articles;
+  });
+};
+
+export const fetchArticleById = article_id => {
+  return request.get(`articles/${article_id}`).then(({ data }) => {
+    return data.article;
   });
 };
 
@@ -15,9 +22,10 @@ export const fetchTopics = () => {
     return data.topics;
   });
 };
-export const fetchArticleById = article_id => {
-  return request.get(`articles/${article_id}`).then(({ data }) => {
-    console.log(data.article);
-    return data.article;
+
+export const fetchComments = article_id => {
+  return request.get(`articles/${article_id}/comments`).then(({ data }) => {
+    console.log(data.comments);
+    return data.comments;
   });
 };

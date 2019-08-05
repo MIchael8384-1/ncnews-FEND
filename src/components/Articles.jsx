@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-import { Link } from "@reach/router";
+import ArticleCard from "./ArticleCard";
 
 class Articles extends Component {
   state = {
@@ -11,9 +11,14 @@ class Articles extends Component {
   componentDidMount() {
     this.getArticleList();
   }
-
+  componentDidUpdate(prevProps) {
+    if (prevProps.slug !== this.props.slug) {
+      this.getArticleList();
+    }
+  }
   getArticleList = () => {
-    api.fetchArticles().then(articlesData => {
+    const { slug } = this.props;
+    api.fetchArticles(slug).then(articlesData => {
       this.setState({ articles: articlesData, loading: false });
     });
   };
@@ -26,19 +31,15 @@ class Articles extends Component {
     if (loading) {
       content = <div>Loading...</div>;
     } else {
-      return articles.map(articleList => {
+      return articles.map(articlesList => {
         return (
-          <ul className="articles">
-            <li key={articleList.article_id} className="articlesList">
-              <h2 className="author">Author:{articleList.author}</h2> <br />
-              <Link to={`/articles/${articleList.article_id}`}>
-                <h3 className="title">Title:{articleList.title}</h3>
-              </Link>
-              <br />
-              <h3 className="topic">Topic:{articleList.topic}</h3>
-              <button>Comments</button>
-            </li>
-          </ul>
+          <ArticleCard
+            key={articlesList.article_id}
+            author={articlesList.author}
+            title={articlesList.title}
+            topic={articlesList.topic}
+            id={articlesList.article_id}
+          />
         );
       });
     }

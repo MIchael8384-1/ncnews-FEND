@@ -4,9 +4,11 @@ import "./App.css";
 import Articles from "./components/Articles";
 import Nav from "./components/Nav";
 import Article from "./components/Article";
-import Topic from "./components/Topics";
+// import Topic from "./components/Topics";
 import Header from "./components/Header";
 import "./style.css";
+import HomePage from "./components/HomePage";
+// import TopicChoice from "./components/TopicChoice";
 
 function App() {
   return (
@@ -14,9 +16,14 @@ function App() {
       <Header />
       <Nav />
       <Router>
-        <Articles path="/" />
+        <HomePage path="/" />
+        <Articles path="/articles" />
+        <Article path="/topics/:topic_slug/articles" />
+
         <Article path="articles/:article_id" />
+        {/* 
         <Topic path="/topics" />
+        <TopicChoice path="/topicChoice" /> */}
       </Router>
     </div>
   );
