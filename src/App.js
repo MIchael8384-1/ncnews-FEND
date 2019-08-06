@@ -19,11 +19,7 @@ function App() {
         <HomePage path="/" />
         <Articles path="/articles" />
         <Articles path="articles/topic/:slug" />
-
         <Article path="articles/:article_id" />
-        {/* 
-        <Topic path="/topics" />
-        <TopicChoice path="/topicChoice" /> */}
       </Router>
     </div>
   );
