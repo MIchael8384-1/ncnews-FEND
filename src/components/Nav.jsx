@@ -15,13 +15,10 @@ class Nav extends React.Component {
         <Link to="/articles">
           <button className="btn-group">ARTICLES</button>
         </Link>
-        {/* <Link to="/topics">
-          <button className="btn-group">TOPICS</button>
-        </Link> */}
         {topics &&
           topics.map(topic => {
             return (
-              <Link to={`/topics/${topic.slug}/articles`}>
+              <Link to={`/articles/topic/${topic.slug}`}>
                 <button className="btn-group">{topic.slug}</button>
               </Link>
             );
