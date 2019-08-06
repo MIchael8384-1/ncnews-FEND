@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-import ArticleCard from "./ArticleCard";
+import ArticlesCard from "./ArticlesCard";
 
 class Articles extends Component {
   state = {
@@ -8,14 +8,6 @@ class Articles extends Component {
     loading: true
   };
 
-  componentDidMount() {
-    this.getArticleList();
-  }
-  componentDidUpdate(prevProps) {
-    if (prevProps.slug !== this.props.slug) {
-      this.getArticleList();
-    }
-  }
   getArticleList = () => {
     const { slug } = this.props;
     api.fetchArticles(slug).then(articlesData => {
@@ -33,7 +25,7 @@ class Articles extends Component {
     } else {
       return articles.map(articlesList => {
         return (
-          <ArticleCard
+          <ArticlesCard
             key={articlesList.article_id}
             author={articlesList.author}
             title={articlesList.title}
@@ -44,6 +36,15 @@ class Articles extends Component {
       });
     }
     return <div>{content}</div>;
+  }
+  componentDidMount() {
+    this.getArticleList();
+  }
+  componentDidUpdate(prevProps) {
+    if (prevProps.slug !== this.props.slug) {
+      this.getArticleList();
+      // create some additional conditions depending for //sort ||
+    }
   }
 }
 
