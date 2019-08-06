@@ -6,13 +6,11 @@ const request = axios.create({
 
 export const fetchTopics = () => {
   return request.get("topics").then(({ data }) => {
-    console.log(data.topics);
     return data.topics;
   });
 };
 
 export const fetchArticles = slug => {
-  // const URL = slug ? `/articles?topic=${slug}` : "/articles";
   return request
     .get("/articles", { params: { topic: slug } })
     .then(({ data }) => {
@@ -29,7 +27,7 @@ export const fetchArticleById = article_id => {
 
 export const fetchComments = article_id => {
   return request.get(`articles/${article_id}/comments`).then(({ data }) => {
-    console.log(data.comments);
+    //console.log(data.comments);
     return data.comments;
   });
 };
