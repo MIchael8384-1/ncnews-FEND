@@ -18,7 +18,7 @@ function App() {
       <Router>
         <HomePage path="/" />
         <Articles path="/articles" />
-        <Article path="/topics/:topic_slug/articles" />
+        <Articles path="articles/topic/:slug" />
 
         <Article path="articles/:article_id" />
         {/* 
