@@ -4,11 +4,11 @@ import "./App.css";
 import Articles from "./components/Articles";
 import Nav from "./components/Nav";
 import Article from "./components/Article";
-// import Topic from "./components/Topics";
 import Header from "./components/Header";
-import "./style.css";
 import HomePage from "./components/HomePage";
-// import TopicChoice from "./components/TopicChoice";
+import ArticleComments from "./components/ArticleComments";
+
+import "./style.css";
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
         <Articles path="/articles" />
         <Articles path="articles/topic/:slug" />
         <Article path="articles/:article_id" />
+        <ArticleComments path="articles/:article_id/comments" />
       </Router>
     </div>
   );
