@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "@reach/router";
+// import { Link } from "@reach/router";
 import ArticleComments from "./ArticleComments";
 
 import * as api from "./api";
 import Voter from "./Voter";
+import CommentAdder from "./CommentAdder";
 
 class Article extends Component {
   state = {
@@ -26,9 +27,10 @@ class Article extends Component {
           <p>{article.body}</p>
           <h4>By: {article.author}</h4>
           <Voter article_id={article.article_id} votes={article.votes} />
-          <Link to={`comments`}>
-            <p>Comments:{article.comment_count}</p>
-          </Link>
+          {/* <Link to={`comments`}> */}
+          <p>Comments:{article.comment_count}</p>
+          {/* </Link> */}
+          <CommentAdder />
           <ArticleComments article_id={this.props.article_id} />
         </li>
       </ul>
