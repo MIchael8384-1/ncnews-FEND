@@ -1,20 +1,19 @@
 import React from "react";
 import { Link } from "@reach/router";
-import "./articleCard.css";
+import "./articlesCard.css";
 
-const ArticleCard = props => {
+const ArticlesCard = props => {
   return (
     <article className="articleCard">
       <div className="container">
         <h2>{props.author}</h2>
-        <Link to={`${props.id}`}>
+        <Link to={`/articles/${props.id}`}>
           <h3>{props.title}</h3>
         </Link>
         <h3>{props.topic}</h3>
-        <button>Comments</button>
       </div>
     </article>
   );
 };
 
-export default ArticleCard;
+export default ArticlesCard;
