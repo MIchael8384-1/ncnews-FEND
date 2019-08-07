@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "@reach/router";
 
 import * as api from "./api";
 
@@ -21,9 +22,11 @@ class Article extends Component {
           <h2>{article.title}</h2>
           <h3>Topic:{article.topic}</h3>
           <p>{article.body}</p>
-          <h4>{article.author}</h4>
+          <h4>By: {article.author}</h4>
           <p>Votes:{article.votes}</p>
-          <p>Comments:{article.comment_count}</p>
+          <Link to={`comments`}>
+            <p>Comments:{article.comment_count}</p>
+          </Link>
         </li>
       </ul>
     );
