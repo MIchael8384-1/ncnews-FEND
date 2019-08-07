@@ -6,7 +6,7 @@ class Nav extends React.Component {
   state = { topics: [] };
   render() {
     const { topics } = this.state;
-    console.log(this.state.topic);
+
     return (
       <nav className="mainNavigation">
         <Link to="/">
