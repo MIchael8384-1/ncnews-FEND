@@ -9,21 +9,27 @@ import HomePage from "./components/HomePage";
 import ArticleComments from "./components/ArticleComments";
 
 import "./style.css";
+import UserPage from "./components/UserPage";
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Nav />
-      <Router>
-        <HomePage path="/" />
-        <Articles path="/articles" />
-        <Articles path="articles/topic/:slug" />
-        <Article path="articles/:article_id" />
-        <ArticleComments path="articles/:article_id/comments" />
-      </Router>
-    </div>
-  );
+class App extends React.Component {
+  state = { user: { username: "jessjelly" } };
+  render() {
+    const { username } = this.state.user;
+    return (
+      <div>
+        <Header />
+        <Nav user={username} />
+        <Router>
+          <HomePage path="/" />
+          <Articles path="/articles" />
+          <Articles path="articles/topic/:topic" />
+          <Article path="articles/:article_id" />
+          <ArticleComments path="articles/:article_id/comments" />
+          <UserPage path="users/:username" />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
