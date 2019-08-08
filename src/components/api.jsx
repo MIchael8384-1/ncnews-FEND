@@ -30,3 +30,25 @@ export const fetchComments = article_id => {
     return data.comments;
   });
 };
+export const patchArticleVotes = (article_id, inc_votes) => {
+  console.log(article_id);
+  console.log(inc_votes);
+  return request
+    .patch(`articles/${article_id}`, { inc_votes })
+
+    .then(({ data }) => {
+      return data.article;
+    });
+};
+
+export const postItem = (article_id, newComment) => {
+  console.log(newComment, "this is the required content");
+  console.log(article_id, "article id");
+  return request
+    .post(`articles/${article_id}/comments`, newComment)
+    .then(({ data }) => {
+      console.log(data);
+      return data.comment;
+    })
+    .catch(console.log);
+};
