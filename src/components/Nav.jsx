@@ -6,6 +6,7 @@ class Nav extends React.Component {
   state = { topics: [] };
   render() {
     const { topics } = this.state;
+    const { user } = this.props;
 
     return (
       <nav className="mainNavigation">
@@ -23,6 +24,9 @@ class Nav extends React.Component {
               </Link>
             );
           })}
+        <Link to={`/users/${user}`}>
+          <button className="btn-group">Log In</button>
+        </Link>
       </nav>
     );
   }

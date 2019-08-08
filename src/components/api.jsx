@@ -10,10 +10,11 @@ export const fetchTopics = () => {
   });
 };
 
-export const fetchArticles = slug => {
+export const fetchArticles = ({ topic, author }) => {
   return request
-    .get("/articles", { params: { topic: slug } })
+    .get("/articles", { params: { topic, author } })
     .then(({ data }) => {
+      console.log(data.articles);
       return data.articles;
     });
   //https://bencnews.herokuapp.com/api/articles?topic=coding
