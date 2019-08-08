@@ -15,7 +15,9 @@ class Voter extends React.Component {
           LIKE
         </button>
         <p>Votes:{votes + voteChange}</p>
-        <button onClick={() => this.vote(-1)}>DISLIKE</button>
+        <button onClick={() => this.vote(-1)} disabled={voteChange <= -1}>
+          DISLIKE
+        </button>
       </>
     );
   }
