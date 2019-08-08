@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "./api";
 import ArticlesCard from "./ArticlesCard";
+import UserDetails from "./UserDetails";
 
 class UserPage extends Component {
   state = { articles: [], isLoading: true };
@@ -9,6 +10,7 @@ class UserPage extends Component {
     if (isLoading) return <p>Loading....</p>;
     return (
       <div>
+        <UserDetails user={this.props.username} />
         {articles.map(article => {
           return (
             <ArticlesCard
