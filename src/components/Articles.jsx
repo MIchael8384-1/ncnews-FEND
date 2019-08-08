@@ -9,8 +9,8 @@ class Articles extends Component {
   };
 
   getArticleList = () => {
-    const { slug } = this.props;
-    api.fetchArticles(slug).then(articlesData => {
+    const { topic } = this.props;
+    api.fetchArticles({ topic }).then(articlesData => {
       this.setState({ articles: articlesData, loading: false });
     });
   };
@@ -41,7 +41,7 @@ class Articles extends Component {
     this.getArticleList();
   }
   componentDidUpdate(prevProps) {
-    if (prevProps.slug !== this.props.slug) {
+    if (prevProps.topic !== this.props.topic) {
       this.getArticleList();
       // create some additional conditions depending for //sort ||
     }
