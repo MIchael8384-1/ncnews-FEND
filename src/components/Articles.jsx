@@ -36,7 +36,6 @@ class Articles extends Component {
   getArticleList = () => {
     const { topic } = this.props;
     const { order, sort_by } = this.state;
-    console.log(order);
     api.fetchArticles({ topic, order, sort_by }).then(articlesData => {
       this.setState({ articles: articlesData, loading: false });
     });
@@ -52,13 +51,10 @@ class Articles extends Component {
       prevState.order !== this.state.order
     ) {
       this.getArticleList();
-      // create some additional conditions depending for //sort ||
     }
   }
 
   sortByOptions = (sort, order_by) => {
-    console.log(sort);
-    console.log(order_by);
     this.setState({ sort_by: sort, order: order_by });
   };
 }
