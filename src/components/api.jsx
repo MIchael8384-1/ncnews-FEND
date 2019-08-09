@@ -10,11 +10,10 @@ export const fetchTopics = () => {
   });
 };
 
-export const fetchArticles = ({ topic, author }) => {
+export const fetchArticles = ({ topic, author, order, sort_by }) => {
   return request
-    .get("/articles", { params: { topic, author } })
+    .get("/articles", { params: { topic, author, order, sort_by } })
     .then(({ data }) => {
-      console.log(data.articles);
       return data.articles;
     });
   //https://bencnews.herokuapp.com/api/articles?topic=coding
@@ -32,8 +31,6 @@ export const fetchComments = article_id => {
   });
 };
 export const patchArticleVotes = (article_id, inc_votes) => {
-  console.log(article_id);
-  console.log(inc_votes);
   return request
     .patch(`articles/${article_id}`, { inc_votes })
 
@@ -51,9 +48,7 @@ export const postItem = (article_id, newComment) => {
     .catch(console.log);
 };
 export const fetchUser = username => {
-  console.log(username, "no username");
   return request.get(`users/${username}`).then(({ data }) => {
-    console.log(data.user);
     return data.user;
   });
 };
