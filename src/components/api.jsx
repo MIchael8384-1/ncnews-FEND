@@ -16,7 +16,6 @@ export const fetchArticles = ({ topic, author, order, sort_by }) => {
     .then(({ data }) => {
       return data.articles;
     });
-  //https://bencnews.herokuapp.com/api/articles?topic=coding
 };
 
 export const fetchArticleById = article_id => {
@@ -50,5 +49,10 @@ export const postItem = (article_id, newComment) => {
 export const fetchUser = username => {
   return request.get(`users/${username}`).then(({ data }) => {
     return data.user;
+  });
+};
+export const deleteCommentById = comment_id => {
+  return request.delete(`comments/${comment_id}`).then(({ data }) => {
+    return data;
   });
 };
