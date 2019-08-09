@@ -27,6 +27,11 @@ class ArticleComments extends Component {
     );
   }
 
+  deleteComment = () => {
+    const { comments } = this.state;
+    api.deleteCommentById(comments.comment_id);
+  };
+
   addItem = newItem => {
     console.log(this.props);
     api.postItem(this.props.article_id, newItem).then(newComment => {
