@@ -53,6 +53,7 @@ export const fetchUser = username => {
 };
 export const deleteCommentById = comment_id => {
   return request.delete(`comments/${comment_id}`).then(({ data }) => {
+    console.log(data, "deleted");
     return data;
   });
 };
