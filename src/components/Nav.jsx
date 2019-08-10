@@ -31,7 +31,9 @@ class Nav extends React.Component {
             );
           })}
         <Link to={`/users/${user}`}>
-          <button className="btn-group">Profile</button>
+          <button className="btn-group" key={this.props.user.slug}>
+            Profile
+          </button>
         </Link>
       </nav>
     );
