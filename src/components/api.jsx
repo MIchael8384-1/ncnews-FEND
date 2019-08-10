@@ -38,6 +38,15 @@ export const patchArticleVotes = (article_id, inc_votes) => {
     });
 };
 
+export const patchCommentVotes = (comment_id, inc_votes) => {
+  return request
+    .patch(`comments/${comment_id}`, { inc_votes })
+    .then(({ data }) => {
+      console.log(data);
+      return data.comment;
+    });
+};
+
 export const postItem = (article_id, newComment) => {
   return request
     .post(`articles/${article_id}/comments`, newComment)
