@@ -6,7 +6,8 @@ import Voter from "./Voter";
 
 class Article extends Component {
   state = {
-    article: {}
+    article: {},
+    isLoading: true
   };
 
   componentDidMount() {
@@ -17,6 +18,8 @@ class Article extends Component {
 
   render() {
     const { article } = this.state;
+    const { isLoading } = this.state;
+    if (isLoading) return <p>Loading...</p>;
     return (
       <ul className="article">
         <li key={article.article_id} className="singleArticleList">
