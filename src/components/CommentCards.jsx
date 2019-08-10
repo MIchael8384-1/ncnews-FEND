@@ -1,12 +1,14 @@
 import React from "react";
+import VoteOnComments from "./VoteOnComments";
 
 const CommentCards = props => {
+  // console.log(props);
   return (
     <article className="commentCard">
       <div className="container">
         <h3>Author:{props.author}</h3>
         <p>{props.body}</p>
-        <p>Votes:{props.votes}</p>
+        <VoteOnComments comment_id={props.comment_id} votes={props.votes} />
         <button onClick={props.deleteComment}>Delete</button>
       </div>
     </article>
