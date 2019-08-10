@@ -59,6 +59,11 @@ class ArticleComments extends Component {
   componentDidMount() {
     this.getCommentsList();
   }
-}
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.comments !== this.state.comments) {
+      this.getCommentsList();
+    }
+  }
+}
 export default ArticleComments;
