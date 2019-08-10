@@ -8,7 +8,7 @@ class ArticleComments extends Component {
   state = { comments: [], isLoading: true };
   render() {
     const { comments, isLoading } = this.state;
-    if (isLoading) return <p>Loading</p>;
+    if (isLoading) return <p>Loading..</p>;
 
     return (
       <div>
@@ -58,12 +58,6 @@ class ArticleComments extends Component {
 
   componentDidMount() {
     this.getCommentsList();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.comments !== this.state.comments) {
-      this.getCommentsList();
-    }
   }
 }
 export default ArticleComments;
