@@ -11,21 +11,27 @@ class Nav extends React.Component {
     return (
       <nav className="mainNavigation">
         <Link to="/">
-          <button className="btn-group">HOME</button>
+          <button type="button" className="btn-group">
+            HOME
+          </button>
         </Link>
         <Link to="/articles">
-          <button className="btn-group">ARTICLES</button>
+          <button type="button" className="btn-group">
+            ARTICLES
+          </button>
         </Link>
         {topics &&
           topics.map(topic => {
             return (
               <Link to={`/articles/topic/${topic.slug}`}>
-                <button className="btn-group">{topic.slug}</button>
+                <button className="btn-group" key={topic.slug}>
+                  {topic.slug}
+                </button>
               </Link>
             );
           })}
         <Link to={`/users/${user}`}>
-          <button className="btn-group">Log In</button>
+          <button className="btn-group">Profile</button>
         </Link>
       </nav>
     );
