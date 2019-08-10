@@ -12,7 +12,7 @@ class Article extends Component {
 
   componentDidMount() {
     api.fetchArticleById(this.props.article_id).then(article => {
-      this.setState({ article });
+      this.setState({ article, isLoading: false });
     });
   }
 
@@ -28,9 +28,8 @@ class Article extends Component {
           <p>{article.body}</p>
           <h4>By: {article.author}</h4>
           <Voter article_id={article.article_id} votes={article.votes} />
-          {/* <Link to={`comments`}> */}
+
           <p>Comments:{article.comment_count}</p>
-          {/* </Link> */}
 
           <ArticleComments article_id={this.props.article_id} />
         </li>
