@@ -6,7 +6,6 @@ import Nav from "./components/Nav";
 import Article from "./components/Article";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
-import ArticleComments from "./components/ArticleComments";
 
 import "./style.css";
 import UserPage from "./components/UserPage";
@@ -24,7 +23,6 @@ class App extends React.Component {
           <Articles path="/articles" />
           <Articles path="articles/topic/:topic" />
           <Article path="articles/:article_id" />
-          <ArticleComments path="articles/:article_id/comments" />
           <UserPage path="users/:username" />
         </Router>
       </div>
