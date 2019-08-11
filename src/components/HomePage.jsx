@@ -3,12 +3,12 @@ import "./homePage.css";
 
 const HomePage = () => {
   return (
-    <div className="HomePage">
-      <p>Welcome To NC Portal</p>
-      <p>Please Select From The Above Options</p>
+    <div className="homePage">
+      <h2>Welcome To NC Portal</h2>
+      <p>PLEASE SELECT FROM THE ABOVE OPTIONS</p>
       <img
-        src="https://thumbs.dreamstime.com/z/rubber-stamp-text-latest-news-inside-illustration-latest-news-104338381.jpg"
-        alt="latest news"
+        src="/images/NC_Logo_Intro.png"
+        alt="NC logo"
         className="responsive"
       />
     </div>
