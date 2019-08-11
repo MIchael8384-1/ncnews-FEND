@@ -2,17 +2,23 @@ import React, { Component } from "react";
 import * as api from "./api";
 import ArticlesCard from "./ArticlesCard";
 import SortForm from "./SortForm";
+import Errors from "./Errors";
 
 class Articles extends Component {
   state = {
     articles: [],
     sort_by: null,
     order: null,
-    loading: true
+    loading: true,
+    error: null
   };
 
   render() {
-    const { articles, loading } = this.state;
+    const { articles, loading, error } = this.state;
+
+    if (error) {
+      return <Errors />;
+    }
     if (loading) return <p>Loading...</p>;
 
     return (
@@ -36,9 +42,14 @@ class Articles extends Component {
   getArticleList = () => {
     const { topic } = this.props;
     const { order, sort_by } = this.state;
-    api.fetchArticles({ topic, order, sort_by }).then(articlesData => {
-      this.setState({ articles: articlesData, loading: false });
-    });
+    api
+      .fetchArticles({ topic, order, sort_by })
+      .then(articlesData => {
+        this.setState({ articles: articlesData, loading: false });
+      })
+      .catch(err => {
+        this.setState({ error: true });
+      });
   };
 
   componentDidMount() {
