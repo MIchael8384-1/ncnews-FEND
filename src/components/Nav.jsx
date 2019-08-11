@@ -3,7 +3,7 @@ import * as api from "./api";
 import { Link } from "@reach/router";
 
 class Nav extends React.Component {
-  state = { topics: [] };
+  state = { topics: [], error: null };
   render() {
     const { topics } = this.state;
     const { user } = this.props;
@@ -46,7 +46,6 @@ class Nav extends React.Component {
       this.setState({ topics: topicsData });
     });
   };
-  componentDidUpdate() {}
 }
 
 export default Nav;
