@@ -1,24 +1,35 @@
 import React, { Component } from "react";
 // import { Link } from "@reach/router";
 import ArticleComments from "./ArticleComments";
+import Errors from "./Errors";
 import * as api from "./api";
 import Voter from "./Voter";
 
 class Article extends Component {
   state = {
     article: {},
-    isLoading: true
+    isLoading: true,
+    error: null
   };
 
   componentDidMount() {
-    api.fetchArticleById(this.props.article_id).then(article => {
-      this.setState({ article, isLoading: false });
-    });
+    api
+      .fetchArticleById(this.props.article_id)
+      .then(article => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ error: true, isLoading: false });
+      });
   }
 
   render() {
-    const { article } = this.state;
-    const { isLoading } = this.state;
+    const { article, isLoading, error } = this.state;
+
+    if (error) {
+      return <Errors />;
+    }
+
     if (isLoading) return <p>Loading...</p>;
     return (
       <ul className="article">
@@ -31,7 +42,10 @@ class Article extends Component {
 
           <p>Comments:{article.comment_count}</p>
 
-          <ArticleComments article_id={this.props.article_id} />
+          <ArticleComments
+            article_id={this.props.article_id}
+            user={this.props.user}
+          />
         </li>
       </ul>
     );
