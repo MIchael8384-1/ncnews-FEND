@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import CommentCards from "./CommentCards";
 import * as api from "./api";
 import CommentAdder from "./CommentAdder";
-// import { navigate } from "@reach/router/lib/history";
 
 class ArticleComments extends Component {
   state = { comments: [], isLoading: true };
   render() {
+    console.log(this.props);
     const { comments, isLoading } = this.state;
+
     if (isLoading) return <p>Loading..</p>;
 
     return (
       <div>
-        <CommentAdder addItem={this.addItem} />
+        <CommentAdder addItem={this.addItem} user={this.props.user} />
         {comments.map(commentData => {
           return (
             <CommentCards
@@ -22,6 +23,7 @@ class ArticleComments extends Component {
               body={commentData.body}
               created={commentData.created_at}
               votes={commentData.votes}
+              user={this.props.user}
               deleteComment={() => this.deleteComment(commentData)}
             />
           );
@@ -31,7 +33,6 @@ class ArticleComments extends Component {
   }
 
   deleteComment = commentToDelete => {
-    console.log(commentToDelete.comment_id);
     api.deleteCommentById(commentToDelete.comment_id);
     this.setState(previousState => ({
       comments: [
