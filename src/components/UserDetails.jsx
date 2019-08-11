@@ -5,6 +5,7 @@ class UserDetails extends Component {
   state = { details: [], isLoading: true };
   render() {
     const { details, isLoading } = this.state;
+
     if (isLoading) return <p>Loading</p>;
     return (
       <div>

@@ -19,6 +19,7 @@ class UserPage extends Component {
               title={article.title}
               topic={article.topic}
               id={article.article_id}
+              user={this.props.username}
             />
           );
         })}
@@ -28,12 +29,9 @@ class UserPage extends Component {
 
   getArticlesList = () => {
     const { username } = this.props;
-    api
-      .fetchArticles({ author: username })
-      .then(articlesDate => {
-        this.setState({ articles: articlesDate, isLoading: false });
-      })
-      .catch(console.dir);
+    api.fetchArticles({ author: username }).then(articlesDate => {
+      this.setState({ articles: articlesDate, isLoading: false });
+    });
   };
 
   componentDidMount() {
