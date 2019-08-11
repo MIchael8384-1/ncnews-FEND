@@ -2,7 +2,6 @@ import React from "react";
 import VoteOnComments from "./VoteOnComments";
 
 const CommentCards = props => {
-  // console.log(props);
   return (
     <article className="commentCard">
       <div className="container">
