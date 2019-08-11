@@ -3,7 +3,7 @@ import * as api from "./api";
 import { Link } from "@reach/router";
 
 class Nav extends React.Component {
-  state = { topics: [], error: null };
+  state = { topics: [] };
   render() {
     const { topics } = this.state;
     const { user } = this.props;
@@ -24,15 +24,15 @@ class Nav extends React.Component {
           topics.map(topic => {
             return (
               <Link to={`/articles/topic/${topic.slug}`}>
-                <button className="btn-group" key={topic.slug}>
-                  {topic.slug}
+                <button type="button" className="btn-group" key={topic.slug}>
+                  {topic.slug.toUpperCase()}
                 </button>
               </Link>
             );
           })}
         <Link to={`/users/${user}`}>
           <button className="btn-group" key={this.props.user.slug}>
-            Profile
+            PROFILE
           </button>
         </Link>
       </nav>
