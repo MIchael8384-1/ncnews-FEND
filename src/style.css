@@ -10,6 +10,8 @@
 
 .mainNavigation {
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
 .articlesList {
@@ -22,24 +24,16 @@
 
   padding: 30px;
 }
-.topicsList {
-  list-style-type: none;
-  text-align: center;
-  color: white;
-  border-style: solid;
-  border-radius: 25px;
-  background-color: black;
-
-  padding: 30px;
-}
 
 .btn-group {
   background-color: black;
+  font-size: 20px;
   margin-left: 10px;
   border: 1px solid;
   color: white;
   padding: 10px 24px;
   cursor: pointer;
+  border-radius: 12px;
 }
 a:link {
   text-decoration: none;
