@@ -14,6 +14,10 @@ class Article extends Component {
   };
 
   componentDidMount() {
+    this.getArticleById();
+  }
+
+  getArticleById = () => {
     api
       .fetchArticleById(this.props.article_id)
       .then(article => {
@@ -22,7 +26,7 @@ class Article extends Component {
       .catch(err => {
         this.setState({ error: true, isLoading: false });
       });
-  }
+  };
 
   render() {
     const { article, isLoading, error } = this.state;
