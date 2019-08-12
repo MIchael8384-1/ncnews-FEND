@@ -4,6 +4,7 @@ import ArticleComments from "./ArticleComments";
 import Errors from "./Errors";
 import * as api from "./api";
 import Voter from "./Voter";
+import "./article.css";
 
 class Article extends Component {
   state = {
@@ -35,13 +36,11 @@ class Article extends Component {
       <ul className="article">
         <li key={article.article_id} className="singleArticleList">
           <h2>{article.title}</h2>
-          <h3>Topic:{article.topic}</h3>
+          <h3>Topic: {article.topic}</h3>
           <p>{article.body}</p>
-          <h4>By: {article.author}</h4>
+          <h3>By: {article.author}</h3>
           <Voter article_id={article.article_id} votes={article.votes} />
-
           <p>Comments:{article.comment_count}</p>
-
           <ArticleComments
             article_id={this.props.article_id}
             user={this.props.user}
