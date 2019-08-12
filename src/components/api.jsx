@@ -42,7 +42,6 @@ export const patchCommentVotes = (comment_id, inc_votes) => {
   return request
     .patch(`comments/${comment_id}`, { inc_votes })
     .then(({ data }) => {
-      console.log(data);
       return data.comment;
     });
 };
@@ -52,8 +51,7 @@ export const postItem = (article_id, newComment) => {
     .post(`articles/${article_id}/comments`, newComment)
     .then(({ data }) => {
       return data.comment;
-    })
-    .catch(console.log);
+    });
 };
 export const fetchUser = username => {
   return request.get(`users/${username}`).then(({ data }) => {
