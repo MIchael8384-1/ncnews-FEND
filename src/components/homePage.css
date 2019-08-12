@@ -1,12 +1,8 @@
-.responsive {
-  width: 100%;
+.responsiveLogo {
+  width: 50%;
   height: auto;
 }
 
 .homePage {
   text-align: center;
-}
-
-.homePageLogo {
-  height: auto;
 }
