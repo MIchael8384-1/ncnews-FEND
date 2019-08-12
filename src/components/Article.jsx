@@ -23,8 +23,11 @@ class Article extends Component {
       .then(article => {
         this.setState({ article, isLoading: false });
       })
-      .catch(err => {
-        this.setState({ error: true, isLoading: false });
+      .catch(({ response }) => {
+        this.setState({
+          error: { msg: response.data.msg, status: response.status },
+          isLoading: false
+        });
       });
   };
 
@@ -32,7 +35,7 @@ class Article extends Component {
     const { article, isLoading, error } = this.state;
 
     if (error) {
-      return <Errors />;
+      return <Errors status={error.status} message={error.msg} />;
     }
 
     if (isLoading) return <p>Loading...</p>;
