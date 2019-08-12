@@ -28,7 +28,6 @@ class CommentAdder extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { username, body } = this.state;
-    console.log(this.props);
     this.props.addItem({ username, body });
     this.setState({ username: "", body: "" });
   };
