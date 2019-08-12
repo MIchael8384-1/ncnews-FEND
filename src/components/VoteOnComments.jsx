@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-
+import "./voteOnComments.css";
 class VoteOnComments extends Component {
   state = {
     voteChangeComment: 0
@@ -9,7 +9,7 @@ class VoteOnComments extends Component {
     const { voteChangeComment } = this.state;
     const { votes } = this.props;
     return (
-      <>
+      <div className="commentVotes">
         <button
           className="btn-group"
           onClick={() => this.commentVote(1)}
@@ -25,7 +25,7 @@ class VoteOnComments extends Component {
         >
           DISLIKE
         </button>
-      </>
+      </div>
     );
   }
   commentVote = inc_votes => {
