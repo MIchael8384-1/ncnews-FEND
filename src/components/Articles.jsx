@@ -9,17 +9,17 @@ class Articles extends Component {
     articles: [],
     sort_by: null,
     order: null,
-    loading: true,
+    isLoading: true,
     error: null
   };
 
   render() {
-    const { articles, loading, error } = this.state;
+    const { articles, isLoading, error } = this.state;
 
     if (error) {
-      return <Errors />;
+      return <Errors status={error.status} message={error.msg} />;
     }
-    if (loading) return <p>Loading...</p>;
+    if (isLoading) return <p>Loading...</p>;
 
     return (
       <div>
@@ -48,10 +48,13 @@ class Articles extends Component {
     api
       .fetchArticles({ topic, order, sort_by })
       .then(articlesData => {
-        this.setState({ articles: articlesData, loading: false });
+        this.setState({ articles: articlesData, isLoading: false });
       })
-      .catch(err => {
-        this.setState({ error: true });
+      .catch(({ response }) => {
+        this.setState({
+          error: { msg: response.data.msg, status: response.status },
+          isLoading: false
+        });
       });
   };
 
