@@ -1,30 +1,23 @@
 import React, { Component } from "react";
+import "./commentAdder.css";
 
 class CommentAdder extends Component {
   state = { username: "jessjelly", body: "" };
+
   render() {
     return (
       <div>
-        {this.props.user && (
-          <form onSubmit={this.handleSubmit}>
-            {/* <label htmlFor="username">Name:</label>
-        <input
-          type="text"
-          view={this.state.username}
-          id="username"
-          onChange={e => this.updateInputState(e.target.value, "username")}
-        />
-        <label htmlFor="body">Comment:</label> */}
-            <input
-              type="text"
-              value={this.state.body}
-              id="info"
-              required
-              onChange={e => this.updateInputState(e.target.value, "body")}
-            />
-            <button>Add Comment</button>
-          </form>
-        )}
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.body}
+            id="info"
+            required
+            onChange={e => this.updateInputState(e.target.value, "body")}
+          />
+          <br />
+          <button className="btn-group">ADD COMMENT</button>
+        </form>
       </div>
     );
   }
