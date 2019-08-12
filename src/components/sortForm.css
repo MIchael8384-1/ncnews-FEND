@@ -1,0 +1,24 @@
+.sortForm {
+  text-align: center;
+  /* padding-bottom: 10px; */
+  padding: 5px;
+  border: 2px solid black;
+  /* border-top: 2px solid black; */
+  border-radius: 25px;
+}
+
+.containerCheckBox {
+  display: block;
+  position: relative;
+  padding-top: 5px;
+  padding-left: 35px;
+  margin-top: 2px;
+  /* cursor: pointer; */
+  font-size: 15px;
+  text-align: left;
+
+  /* -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; */
+}
