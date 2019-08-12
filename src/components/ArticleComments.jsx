@@ -33,19 +33,18 @@ class ArticleComments extends Component {
   }
 
   deleteComment = commentToDelete => {
+    console.log(commentToDelete);
     api.deleteCommentById(commentToDelete.comment_id);
     this.setState(previousState => ({
-      comments: [
-        ...previousState.comments.slice(0, commentToDelete),
-        ...previousState.comments.slice(commentToDelete + 1)
-      ]
+      comments: previousState.comments.filter(
+        comment => comment.comment_id !== commentToDelete.comment_id
+      )
     }));
   };
 
   addItem = newItem => {
     api.postItem(this.props.article_id, newItem).then(newComment => {
       this.setState(previousState => {
-        // console.log(newComment);
         return { comments: [newComment, ...previousState.comments] };
       });
     });
