@@ -40,7 +40,7 @@ class Article extends Component {
           <p>{article.body}</p>
           <h3>By: {article.author}</h3>
           <Voter article_id={article.article_id} votes={article.votes} />
-          <p>Comments:{article.comment_count}</p>
+
           <ArticleComments
             article_id={this.props.article_id}
             user={this.props.user}
