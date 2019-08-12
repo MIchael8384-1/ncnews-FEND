@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Link } from "@reach/router";
 import ArticleComments from "./ArticleComments";
 import Errors from "./Errors";
 import * as api from "./api";
