@@ -1,6 +1,5 @@
 import React from "react";
-//sort_by , order
-
+import "./sortForm.css";
 class SortForm extends React.Component {
   state = {
     selectedOption: "",
@@ -10,69 +9,69 @@ class SortForm extends React.Component {
   render() {
     const { sort_by, order } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="radio">
-          <label>
+      <form className="sortForm" onSubmit={this.handleSubmit}>
+        <div className="checkbox">
+          <label className="containerCheckBox">
             <input
-              type="radio"
+              type="checkbox"
               name="sort"
               value="votes"
               checked={sort_by === "votes"}
               onChange={this.handleOptionChange}
             />
-            Votes
+            VOTES
           </label>
         </div>
         <div className="radio">
-          <label>
+          <label className="containerCheckBox">
             <input
-              type="radio"
+              type="checkbox"
               name="sort"
               value={"comment_count"}
               checked={sort_by === "comment_count"}
               onChange={this.handleOptionChange}
             />
-            Comment Count
+            COMMENT COUNT
           </label>
         </div>
-        <div className="radio">
-          <label>
+        <div className="checkbox">
+          <label className="containerCheckBox">
             <input
-              type="radio"
+              type="checkbox"
               name="sort"
               value={"created_at"}
-              // defaultValue="created_at"
               checked={sort_by === "created_at"}
               onChange={this.handleOptionChange}
             />
-            Created At
+            CREATED AT
           </label>
         </div>
 
         <div>
-          <label>
+          <label className="containerCheckBox">
             <input
-              type="radio"
+              type="checkbox"
               name="order"
               value="asc"
               checked={order === "asc"}
               onChange={this.handleOrderChange}
             />
-            asc
+            ASC
           </label>
-          <label>
+        </div>
+        <div>
+          <label className="containerCheckBox">
             <input
-              type="radio"
+              type="checkbox"
               name="order"
               value="desc"
-              // defaultValue="desc"
               checked={order === "desc"}
               onChange={this.handleOrderChange}
             />
-            desc
-          </label>{" "}
-          <button className="btn-sort" type="submit">
-            Sort
+            DESC
+          </label>
+          <button className="btn-group" type="submit">
+            SORT
           </button>
         </div>
       </form>
