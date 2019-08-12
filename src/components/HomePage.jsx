@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className="homePage">
       <h2>Welcome To NC Portal</h2>
       <p>PLEASE SELECT FROM THE ABOVE OPTIONS</p>
-      <img src={HomePageLogo} alt="NC logo" className="responsive" />
+      <img src={HomePageLogo} alt="NC logo" className="responsiveLogo" />
     </div>
   );
 };
