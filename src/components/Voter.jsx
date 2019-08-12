@@ -12,7 +12,7 @@ class Voter extends React.Component {
     return (
       <>
         <button
-          className="btn-group"
+          className="btn-vote"
           onClick={() => this.vote(1)}
           disabled={voteChange >= 1}
         >
@@ -20,7 +20,7 @@ class Voter extends React.Component {
         </button>
         <h3>Votes:{votes + voteChange}</h3>
         <button
-          className="btn-group"
+          className="btn-vote"
           onClick={() => this.vote(-1)}
           disabled={voteChange <= -1}
         >
