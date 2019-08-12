@@ -31,6 +31,9 @@ class Articles extends Component {
               author={articlesList.author}
               title={articlesList.title}
               topic={articlesList.topic}
+              created_at={articlesList.created_at}
+              comment_count={articlesList.comment_count}
+              votes={articlesList.votes}
               id={articlesList.article_id}
             />
           );
