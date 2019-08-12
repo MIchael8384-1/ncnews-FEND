@@ -88,7 +88,6 @@ class SortForm extends React.Component {
   handleSubmit = e => {
     const { sort_by, order } = this.state;
     e.preventDefault();
-    this.setState({ sort_by: "created_at", order: "desc" });
     this.props.sortByOptions(sort_by, order);
     console.log("you have selected:", this.state.sort_by);
   };
