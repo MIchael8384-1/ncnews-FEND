@@ -6,11 +6,14 @@ const ArticlesCard = props => {
   return (
     <article className="articleCard">
       <div className="container">
-        <h2>{props.author}</h2>
+        <h1>{props.author}</h1>
         <Link to={`/articles/${props.id}`}>
           <h3>{props.title}</h3>
         </Link>
         <h3>{props.topic}</h3>
+        <p>{props.created_at}</p>
+        <p>Votes: {props.votes}</p>
+        <p>Comments: {props.comment_count}</p>
       </div>
     </article>
   );
