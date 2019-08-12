@@ -11,11 +11,19 @@ class Voter extends React.Component {
 
     return (
       <>
-        <button onClick={() => this.vote(1)} disabled={voteChange >= 1}>
+        <button
+          className="btn-group"
+          onClick={() => this.vote(1)}
+          disabled={voteChange >= 1}
+        >
           LIKE
         </button>
-        <p>Votes:{votes + voteChange}</p>
-        <button onClick={() => this.vote(-1)} disabled={voteChange <= -1}>
+        <h3>Votes:{votes + voteChange}</h3>
+        <button
+          className="btn-group"
+          onClick={() => this.vote(-1)}
+          disabled={voteChange <= -1}
+        >
           DISLIKE
         </button>
       </>
