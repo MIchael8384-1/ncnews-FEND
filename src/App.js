@@ -6,7 +6,7 @@ import Nav from "./components/Nav";
 import Article from "./components/Article";
 import Header from "./components/Header";
 import HomePage from "./components/HomePage";
-
+import "./App.css";
 import "./style.css";
 import UserPage from "./components/UserPage";
 
