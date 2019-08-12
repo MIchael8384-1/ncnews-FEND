@@ -1,3 +1,24 @@
 .commentVotes {
   margin-bottom: 10px;
 }
+
+.btn-vote {
+  background-color: black;
+  font-size: 20px;
+  margin-left: 10px;
+  border: 1px solid;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+/* a {
+  text-decoration: none;
+} */
+.btn-vote:hover {
+  background-color: orange;
+}
+
+.btn-vote:focus {
+  background-color: red;
+}
