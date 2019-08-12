@@ -1,12 +1,14 @@
 import React from "react";
 import { Link } from "@reach/router";
+import "./errorHandler.css";
 
 const Errors = () => {
   return (
-    <div>
+    <div className="errorHandler">
       <h1> This Page Does Not Exist!</h1>
-      <Link to="/">
-        <button className="btn-group">return to homepage</button>
+      <p>Back to Articles</p>
+      <Link to="/articles">
+        <button className="btn-group">Back</button>
       </Link>
     </div>
   );
