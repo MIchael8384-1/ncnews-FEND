@@ -7,7 +7,7 @@ const HomePage = () => {
       <h2>Welcome To NC Portal</h2>
       <p>PLEASE SELECT FROM THE ABOVE OPTIONS</p>
       <img
-        src="/images/NC_Logo_Intro.png"
+        src="../src/images/NC_Logo_Intro.png"
         alt="NC logo"
         className="responsive"
       />

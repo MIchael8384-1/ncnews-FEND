@@ -23,8 +23,8 @@ class Nav extends React.Component {
         {topics &&
           topics.map(topic => {
             return (
-              <Link to={`/articles/topic/${topic.slug}`}>
-                <button type="button" className="btn-group" key={topic.slug}>
+              <Link to={`/articles/topic/${topic.slug}`} key={topic.slug}>
+                <button type="button" className="btn-group">
                   {topic.slug.toUpperCase()}
                 </button>
               </Link>
