@@ -18,6 +18,8 @@ class UserPage extends Component {
               author={article.author}
               title={article.title}
               topic={article.topic}
+              comment_count={article.comment_count}
+              votes={article.votes}
               id={article.article_id}
               user={this.props.username}
             />

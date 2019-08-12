@@ -11,6 +11,7 @@ class VoteOnComments extends Component {
     return (
       <>
         <button
+          className="btn-group"
           onClick={() => this.commentVote(1)}
           disabled={voteChangeComment >= 1}
         >
@@ -18,6 +19,7 @@ class VoteOnComments extends Component {
         </button>
         <p>Votes:{votes + voteChangeComment}</p>
         <button
+          className="btn-group"
           onClick={() => this.commentVote(-1)}
           disabled={voteChangeComment <= -1}
         >
@@ -28,8 +30,6 @@ class VoteOnComments extends Component {
   }
   commentVote = inc_votes => {
     const { comment_id } = this.props;
-    console.log(comment_id);
-    console.log(inc_votes);
     api.patchCommentVotes(comment_id, inc_votes);
     this.setState(currentState => {
       return {
