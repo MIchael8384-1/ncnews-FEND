@@ -1,12 +1,17 @@
 import React from "react";
 import * as api from "./api";
 import { Link } from "@reach/router";
+import Errors from "./Errors";
 
 class Nav extends React.Component {
-  state = { topics: [] };
+  state = { topics: [], error: null };
   render() {
-    const { topics } = this.state;
+    const { topics, error } = this.state;
     const { user } = this.props;
+
+    if (error) {
+      return <Errors status={error.status} message={error.msg} />;
+    }
 
     return (
       <nav className="mainNavigation">
@@ -42,9 +47,16 @@ class Nav extends React.Component {
     this.getTopicsList();
   }
   getTopicsList = () => {
-    api.fetchTopics().then(topicsData => {
-      this.setState({ topics: topicsData });
-    });
+    api
+      .fetchTopics()
+      .then(topicsData => {
+        this.setState({ topics: topicsData });
+      })
+      .catch(({ response }) => {
+        this.setState({
+          error: { msg: response.data.msg, status: response.status }
+        });
+      });
   };
 }
 
