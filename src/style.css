@@ -21,6 +21,7 @@
   border-style: solid;
   border-radius: 25px;
   background-color: black;
+  border-block-color: red;
 
   padding: 30px;
 }
@@ -35,9 +36,22 @@
   cursor: pointer;
   border-radius: 12px;
 }
-a:link {
+a {
   text-decoration: none;
 }
-a {
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: black;
+}
+
+a:visited {
   color: white;
+}
+
+p {
+  font-size: 20px;
 }
