@@ -43,7 +43,7 @@ Front-End:
 Back-end:
 
 - [Heroku - ncnew ](https://backend-ncnews.herokuapp.com/api)
-- [Git repository]()
+- [Git repository](https://github.com/MIchael8384-1/nc_news)
 
 ---
 
