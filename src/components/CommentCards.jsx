@@ -3,7 +3,6 @@ import VoteOnComments from "./VoteOnComments";
 import "./commentCards.css";
 
 const CommentCards = props => {
-  console.log(props.user);
   return (
     <article className="commentCard">
       <div className="container">

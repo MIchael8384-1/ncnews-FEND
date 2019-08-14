@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: "https://bencnews.herokuapp.com/api/"
+  baseURL: "https://backend-ncnews.herokuapp.com/api/"
 });
 
 export const fetchTopics = () => {
@@ -32,7 +32,6 @@ export const fetchComments = article_id => {
 export const patchArticleVotes = (article_id, inc_votes) => {
   return request
     .patch(`articles/${article_id}`, { inc_votes })
-
     .then(({ data }) => {
       return data.article;
     });
@@ -40,7 +39,7 @@ export const patchArticleVotes = (article_id, inc_votes) => {
 
 export const patchCommentVotes = (comment_id, inc_votes) => {
   return request
-    .patch(`comments/${comment_id}`, { inc_votes })
+    .patch(`comment/${comment_id}`, { inc_votes })
     .then(({ data }) => {
       return data.comment;
     });
