@@ -11,7 +11,7 @@ class VoteOnComments extends Component {
     return (
       <div className="commentVotes">
         <button
-          className="btn-group"
+          className="btn-vote"
           onClick={() => this.commentVote(1)}
           disabled={voteChangeComment >= 1}
         >
@@ -19,7 +19,7 @@ class VoteOnComments extends Component {
         </button>
         <p>Votes:{votes + voteChangeComment}</p>
         <button
-          className="btn-group"
+          className="btn-vote"
           onClick={() => this.commentVote(-1)}
           disabled={voteChangeComment <= -1}
         >
