@@ -1,24 +1,37 @@
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+}
+
 .sortForm {
+  margin: auto;
   text-align: center;
-  /* padding-bottom: 10px; */
   padding: 5px;
   border: 2px solid black;
-  /* border-top: 2px solid black; */
   border-radius: 25px;
+  width: 50%;
 }
 
 .containerCheckBox {
+  margin: auto;
   display: block;
   position: relative;
-  padding-top: 5px;
-  padding-left: 35px;
+  padding-top: 10px;
   margin-top: 2px;
-  /* cursor: pointer; */
   font-size: 15px;
   text-align: left;
+}
 
-  /* -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; */
+.btn-sort {
+  margin: auto;
+  background-color: black;
+  font-size: 20px;
+  /* margin-left: 10px; */
+  border: 1px solid;
+  color: white;
+  padding: 10px 24px;
+  cursor: pointer;
+  border-radius: 12px;
+  margin-top: 20px;
+  /* margin-right: 50%; */
 }
