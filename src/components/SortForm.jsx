@@ -95,7 +95,6 @@ class SortForm extends React.Component {
     const { sort_by, order } = this.state;
     e.preventDefault();
     this.props.sortByOptions(sort_by, order);
-    console.log("you have selected:", this.state.sort_by);
   };
 }
 

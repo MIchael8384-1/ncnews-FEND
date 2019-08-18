@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as api from "./api";
-import "./voteOnComments.css";
+import "./votes.css";
 class VoteOnComments extends Component {
   state = {
     voteChangeComment: 0

@@ -6,7 +6,6 @@ const request = axios.create({
 
 export const fetchTopics = () => {
   return request.get("topics").then(({ data }) => {
-    console.log(data);
     return data.topics;
   });
 };
@@ -60,8 +59,4 @@ export const fetchUser = username => {
 };
 export const deleteCommentById = comment_id => {
   return request.delete(`comments/${comment_id}`);
-  // .then(({ data }) => {
-  //   console.log(data, "deleted");
-  //   return data;
-  // });
 };

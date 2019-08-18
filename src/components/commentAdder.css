@@ -2,7 +2,7 @@ form [type="text"] {
   width: 80%;
   margin-top: 20px;
   margin-bottom: 20px;
-  height: 100px;
+  height: 30px;
 }
 input[type="text"]:focus {
   border: 3px solid black;

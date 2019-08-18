@@ -1,5 +1,6 @@
 import React from "react";
 import * as api from "./api";
+import "./votes.css";
 
 class Voter extends React.Component {
   state = {

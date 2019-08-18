@@ -51,11 +51,10 @@ class Articles extends Component {
         this.setState({ articles: articlesData, isLoading: false });
       })
       .catch(response => {
-        console.dir(response);
-        // this.setState({
-        //   error: { msg: response.data.msg, status: response.status },
-        //   isLoading: false
-        // });
+        this.setState({
+          error: { msg: response.data.msg, status: response.status },
+          isLoading: false
+        });
       });
   };
 
