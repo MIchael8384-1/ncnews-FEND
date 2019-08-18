@@ -7,7 +7,6 @@ import Errors from "./Errors";
 class ArticleComments extends Component {
   state = { comments: [], error: null, isLoading: true };
   render() {
-    console.log(this.props);
     const { comments, isLoading, error } = this.state;
 
     if (error) {
@@ -37,7 +36,6 @@ class ArticleComments extends Component {
   }
 
   deleteComment = commentToDelete => {
-    console.log(commentToDelete);
     api.deleteCommentById(commentToDelete.comment_id);
     this.setState(previousState => ({
       comments: previousState.comments.filter(

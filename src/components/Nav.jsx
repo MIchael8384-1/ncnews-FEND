@@ -47,16 +47,17 @@ class Nav extends React.Component {
     this.getTopicsList();
   }
   getTopicsList = () => {
-    api
-      .fetchTopics()
-      .then(topicsData => {
-        this.setState({ topics: topicsData });
-      })
-      .catch(({ response }) => {
-        this.setState({
-          error: { msg: response.data.msg, status: response.status }
-        });
-      });
+    api.fetchTopics().then(topicsData => {
+      this.setState({ topics: topicsData });
+    });
+    // .catch(err => {
+    //   console.dir(err);
+    // });
+    // .catch(({ response }) => {
+    //   this.setState({
+    //     error: { msg: response.data.msg, status: response.status }
+    //   });
+    // });
   };
 }
 
