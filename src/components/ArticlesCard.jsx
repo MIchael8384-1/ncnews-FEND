@@ -8,7 +8,7 @@ const ArticlesCard = props => {
       <div className="container">
         <h1>{props.author}</h1>
         <Link to={`/articles/${props.id}`}>
-          <h3>{props.title}</h3>
+          <h3>{props.title.toUpperCase()}</h3>
         </Link>
         <h3>{props.topic}</h3>
         <p>{props.created_at}</p>

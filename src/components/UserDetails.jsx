@@ -14,7 +14,7 @@ class UserDetails extends Component {
     if (isLoading) return <p>Loading</p>;
     return (
       <div>
-        <p>User: {details.username}</p>
+        <p>Logged In: {details.username}</p>
       </div>
     );
   }
