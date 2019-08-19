@@ -37,7 +37,7 @@ You will also see a link below for my Back-end which links to my Front-end.
 
 Front-End:
 
-- [Netlify - NCNews Round](https://ncnewsfend-michaells.netlify.com/)
+- [Netlify - NCNews](https://ncnewsfend-michaells.netlify.com/)
 - [Git repository](https://github.com/MIchael8384-1/ncnews-FEND)
 
 Back-end:
