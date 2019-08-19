@@ -20,6 +20,12 @@ You will also see a link below for my Back-end which links to my Front-end.
 **2.** Npm v6.9.2<br/>
 
 ---
+ ### **Dependencies**
+ 
+@reach/router v1.2.1
+axios v0.19.0
+react v16.8.6
+
 
 ### **Set-Up**
 
