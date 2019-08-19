@@ -22,9 +22,9 @@ You will also see a link below for my Back-end which links to my Front-end.
 ---
  ### **Dependencies**
  
-@reach/router v1.2.1
-axios v0.19.0
-react v16.8.6
+@reach/router v1.2.1 <br/>
+axios v0.19.0<br/>
+react v16.8.6<br/>
 
 
 ### **Set-Up**
